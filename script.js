@@ -21,8 +21,8 @@ window.addEventListener("load",()=>{
 function loadMusic(indexNumb){
     musicName.innerHTML = allMusic[indexNumb - 1].name;
      musicArtist.innerHTML = allMusic[indexNumb - 1].artist;
-     musicImg.src = `./images/${allMusic[indexNumb-1].img}.jpg`;
-     mainAudio.src = `./songs/${allMusic[indexNumb-1].src}.mp3`;
+     musicImg.src = `images/${allMusic[indexNumb-1].img}.jpg`;
+     mainAudio.src = `songs/${allMusic[indexNumb-1].src}.mp3`;
 }
 function playMusic(){
     wrapper.classList.add("paused");
@@ -153,7 +153,7 @@ for(let i = 0; i < allMusic.length; i++){
                     <span>${allMusic[i].name}</span>
                     <p>${allMusic[i].artist}</p>
                 </div>
-                <audio class="${allMusic[i].src}"  src="./songs/${allMusic[i].src}.mp3"></audio>
+                <audio class="${allMusic[i].src}"  src="songs/${allMusic[i].src}.mp3"></audio>
                 <span id="${allMusic[i].src}" class="audio-duration">3:40</span>
             </li>`;
     ulTag.insertAdjacentHTML("beforeend", liTag);
@@ -195,4 +195,5 @@ function clicked(element){
     loadMusic(musicIndex);
     playMusic();
     playingNow();
+
 }
